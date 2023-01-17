@@ -2,17 +2,16 @@ import java.security.SecureRandom;
 
 public class Senha {
 
-	private int comprimento=8;
+	private int comprimento = 8;
 	private String contrasenha;
-	
+
 	public Senha(Senha senha) {
 		this.comprimento = senha.comprimento;
 		this.contrasenha = senha.contrasenha;
 	}
-		
 
 	public Senha(int comprimento) {
-		
+
 		this.comprimento = comprimento;
 		this.contrasenha = gerarContraSenha(comprimento);
 	}
@@ -31,6 +30,15 @@ public class Senha {
 
 	public static boolean senhaForte(String senha) {
 		return forcaSenha(senha);
+	}
+
+	private String gerarContraSenha(int comprimento) {
+		final String aleatorio = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+		SecureRandom random = new SecureRandom();
+		StringBuilder sb = new StringBuilder(comprimento);
+		for (int i = 0; i < comprimento; i++)
+			sb.append(aleatorio.charAt(random.nextInt(aleatorio.length())));
+		return sb.toString();
 	}
 
 	private static boolean forcaSenha(String senha) {
@@ -53,20 +61,10 @@ public class Senha {
 
 		if (digitos > 5 && upperCases > 2 && lowerCases > 1) {
 			return true;
-		} 
-		else {
+		} else {
 			return false;
 		}
 
 	}
-	
-	private String gerarContraSenha(int comprimento) {
-		final String aleatorio = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-		SecureRandom random = new SecureRandom();
-		StringBuilder sb = new StringBuilder(comprimento);
-		for (int i = 0; i < comprimento; i++)
-			sb.append(aleatorio.charAt(random.nextInt(aleatorio.length())));
-		return sb.toString();
-	}
-	
+
 }

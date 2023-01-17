@@ -38,8 +38,8 @@ public class VerificarSenha {
 		Senha aux;
 		for (int i = 0; i < senha.length; i++) {
 			for (int j = i + 1; j < senha.length; j++) {
-				int compare = senha[i].getContrasenha().compareToIgnoreCase(senha[j].getContrasenha());
-				if (compare > 0) {
+				int comparar = senha[i].getContrasenha().compareToIgnoreCase(senha[j].getContrasenha());
+				if (comparar > 0) {
 					aux = senha[i];
 					senha[i] = senha[j];
 					senha[j] = aux;
