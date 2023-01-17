@@ -2,18 +2,13 @@ import java.security.SecureRandom;
 
 public class Senha {
 
-	private int comprimento = 8;
+	private int comprimento=8;
 	private String contrasenha;
-	
-	public Senha() {
-		
-		this.comprimento = 8;
-	}
 	
 	public Senha(Senha senha) {
 		this.comprimento = senha.comprimento;
 		this.contrasenha = senha.contrasenha;
-	}	
+	}
 		
 
 	public Senha(int comprimento) {
@@ -58,7 +53,8 @@ public class Senha {
 
 		if (digitos > 5 && upperCases > 2 && lowerCases > 1) {
 			return true;
-		} else {
+		} 
+		else {
 			return false;
 		}
 

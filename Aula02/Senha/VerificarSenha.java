@@ -6,24 +6,24 @@ public class VerificarSenha {
 		System.out.println("Digite o numero de senhas que seão armazenados: ");
 		int aux = sc.nextInt();
 
-		Senha[] arrayPws = new Senha[aux];
+		Senha[] arraySenha = new Senha[aux];
 
 		System.out.println("Digite o tamanho da senha: ");
 		Integer tamanhoSenha = sc.nextInt();
+			
+		fillArray(arraySenha, tamanhoSenha);
 
-		fillArray(arrayPws, tamanhoSenha);
-
-		Senha[] copyPws = arrayPws.clone();
-		sortArray(copyPws);
+		Senha[] copiarSenha = arraySenha.clone();
+		sortArray(copiarSenha);
 
 		System.out.println("Contraseñas ordenadas: ");
-		for (short i = 0; i < copyPws.length; i++) {
-			System.out.println(copyPws[i].getContrasenha());
+		for (short i = 0; i < copiarSenha.length; i++) {
+			System.out.println(copiarSenha[i].getContrasenha());
 		}
 
 		System.out.println("Todas las contraseñas: ");
-		for (short i = 0; i < arrayPws.length; i++) {
-			System.out.println(arrayPws[i].getContrasenha() + " " + Senha.senhaForte(arrayPws[i].getContrasenha()));
+		for (short i = 0; i < arraySenha.length; i++) {
+			System.out.println(arraySenha[i].getContrasenha() + " " + Senha.senhaForte(arraySenha[i].getContrasenha()));
 		}
 	}
 
