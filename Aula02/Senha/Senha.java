@@ -2,9 +2,12 @@ import java.security.SecureRandom;
 
 public class Senha {
 
-	private int comprimento = 8;
+	private int comprimento ;
 	private String contrasenha;
 
+	public Senha() {
+	 this.comprimento = 8;
+	}
 	public Senha(Senha senha) {
 		this.comprimento = senha.comprimento;
 		this.contrasenha = senha.contrasenha;
